@@ -1,0 +1,288 @@
+{
+	"listado": [
+		{
+			"id": 1,
+			"nombre": "coca cola",
+			"precio_unitario": 300,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 1,
+				"tipo_categoria": "bebida"
+			},
+			"imagen": "",
+			"codigo_barra": "",
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
+		},
+		{
+			"id": 2,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 15,
+			"esta_en_carrito": false
+		},
+		{
+			"id": 3,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 15
+		},
+		{
+			"id": 4,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 5,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 15
+		},
+		{
+			"id": 6,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 15
+		},
+		{
+			"id": 7,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 8,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 9,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 10,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 11,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 12,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 13,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 14,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 15,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 16,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 17,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 18,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 19,
+			"nombre": "televisor",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		},
+		{
+			"id": 20,
+			"nombre": "Play Station 5",
+			"precio_unitario": 500,
+			"unidad": {
+				"id_unidad": 1,
+				"tipo_unidad": "unidad"
+			},
+			"categoria": {
+				"id_categoria": 2,
+				"tipo_categoria": "electrodomestico"
+			},
+			"cantidad_unidades": 10
+		}
+	]
+}
