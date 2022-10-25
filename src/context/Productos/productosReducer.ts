@@ -1,12 +1,11 @@
-import { Producto } from '../../interfaces/listado'
+import { Producto, ProductoSimple } from '../../interfaces/listado'
 import { productosState } from './ProductosState'
 
-/**
- *
- */
 type ProductosActionType =
 	| { type: 'GET_PRODUCTOS'; payload: Producto[] }
-	| { type: 'ADD_CARRITO'; payload: Producto }
+	| { type: 'ADD_PRODUCTO'; payload: Producto }
+	| { type: 'UPDATE_PRODUCTO'; payload: {producto: Producto,id:string} }
+	| { type: 'FIND_PRODUCTO'; payload: ProductoSimple  }
 
 export const productosReducer = (
 	state: productosState,
@@ -18,11 +17,24 @@ export const productosReducer = (
 			...state,
 			productos: action.payload,
 		}
-	case 'ADD_CARRITO':
+	case 'ADD_PRODUCTO':
 		return {
 			...state,
-			carrito_compras: [...state.carrito_compras, action.payload],
+			productos: [...state.productos, action.payload],
 		}
+	case 'UPDATE_PRODUCTO':
+		return {
+			...state,
+			productos: state.productos.map(p => p._id === action.payload.id ? action.payload.producto : p)
+				
+		}
+
+	case 'FIND_PRODUCTO':
+		return {
+			...state,
+			producto: action.payload
+		}
+
 	default:
 		return state
 	}

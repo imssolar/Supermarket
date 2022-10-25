@@ -1,53 +1,37 @@
 import React, { useContext, useEffect, useMemo } from 'react'
 import { Producto } from '../../interfaces/listado'
-import { Stack, Typography } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2'
-import { MUIButton } from '../Button/MUIButton'
 import { ProductosContext } from '../../context/Productos/ProductosContext'
 import { CardProducto } from './CardProducto'
-import { Input } from '../Input/Input'
-import { Carrito } from '../Carrito/Carrito'
 
-export const ListadoProductos = () => {
+interface PropsListadoProductos {
+	estado: boolean
+}
+
+export const ListadoProductos = ({ estado }: PropsListadoProductos) => {
 	const { getProductos, productos } = useContext(ProductosContext)
 
 	useEffect(() => {
-		getProductos()
-	}, [])
-	const cantidad = 15
+		if (productos.length === 0) {
+			console.log(productos.length)
+			getProductos()
+		}
+	}, [productos])
 
+	/*REVISAR que llega o que tiene productos cuando actualizamos uno*/
 	const productosByStatus = useMemo(
-		() => productos.filter((p) => p.cantidad_unidades === cantidad),
+		() => productos.filter((p) => p.esta_en_carrito === estado),
 		[productos]
 	)
-	console.log(productosByStatus)
 
 	return (
-		<Grid container spacing={2}>
-			<Grid xs={4}>
-				<h3>ASIDE</h3>
-			</Grid>
-			<Grid xs={4} sx={{ marginTop: 5 }}>
-				<Typography variant="h3">Supermarket APP</Typography>
-				<Input />
-				{productos.map((producto: Producto) => (
-					<CardProducto producto={producto} key={producto.id} />
-				))}
-				<Stack
-					spacing={2}
-					direction="row"
-					justifyContent="center"
-					alignItems="center"
-				>
-					<MUIButton>Inicio</MUIButton>
-					<MUIButton>Atrás</MUIButton>
-					<MUIButton>Siguiente</MUIButton>
-					<MUIButton>último</MUIButton>
-				</Stack>
-			</Grid>
-			<Grid xs={4}>
-				<Carrito />
-			</Grid>
-		</Grid>
+		<div>
+			{productosByStatus.map((producto: Producto) => (
+				<CardProducto
+					producto={producto}
+					key={producto._id}
+					isCarrito={producto.esta_en_carrito}
+				/>
+			))}
+		</div>
 	)
 }

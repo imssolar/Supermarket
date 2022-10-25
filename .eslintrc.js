@@ -27,7 +27,7 @@ module.exports = {
 		],
 		'linebreak-style': [
 			'error',
-			'unix'
+			'windows'
 		],
 		'quotes': [
 			'error',
@@ -36,6 +36,8 @@ module.exports = {
 		'semi': [
 			'error',
 			'never'
-		]
+		],
+		'react/react-in-jsx-scope': 'off',
+		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.ts', '.jsx', '.tsx'] }],
 	}
 }

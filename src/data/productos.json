@@ -1,16 +1,16 @@
 {
 	"listado": [
 		{
-			"id": 1,
-			"nombre": "coca cola",
+			"id": "1",
+			"nombre": "Coca Cola",
 			"precio_unitario": 300,
 			"unidad": {
-				"id_unidad": 1,
-				"tipo_unidad": "unidad"
+				"id_unidad": 2,
+				"tipo_unidad": "Unidad"
 			},
 			"categoria": {
 				"id_categoria": 1,
-				"tipo_categoria": "bebida"
+				"tipo_categoria": "Gaseosa"
 			},
 			"imagen": "",
 			"codigo_barra": "",
@@ -18,8 +18,8 @@
 			"esta_en_carrito": false
 		},
 		{
-			"id": 2,
-			"nombre": "televisor",
+			"id": "2",
+			"nombre": "Barrita Cereal",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -33,8 +33,8 @@
 			"esta_en_carrito": false
 		},
 		{
-			"id": 3,
-			"nombre": "televisor",
+			"id": "3",
+			"nombre": "Mesa Living Comedor",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -44,11 +44,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 15
+			"cantidad_unidades": 15,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 4,
-			"nombre": "televisor",
+			"id": "4",
+			"nombre": "Computador Asus Rog Strix",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -58,11 +59,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 5,
-			"nombre": "televisor",
+			"id": "5",
+			"nombre": "Iphone 14",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -72,11 +74,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 15
+			"cantidad_unidades": 15,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 6,
-			"nombre": "televisor",
+			"id": "6",
+			"nombre": "Audífonos BT Razer",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -86,11 +89,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 15
+			"cantidad_unidades": 15,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 7,
-			"nombre": "televisor",
+			"id": "7",
+			"nombre": "Mouse Pad Logitech",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -100,11 +104,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 8,
-			"nombre": "televisor",
+			"id": "8",
+			"nombre": "Plumón pizarra Pilot",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -114,11 +119,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 9,
-			"nombre": "televisor",
+			"id": "9",
+			"nombre": "Radio Stereo",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -128,11 +134,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 10,
-			"nombre": "televisor",
+			"id": "10",
+			"nombre": "Play Station 4",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -142,11 +149,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 11,
-			"nombre": "televisor",
+			"id": "11",
+			"nombre": "Xbox 360",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -156,11 +164,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 12,
-			"nombre": "televisor",
+			"id": "12",
+			"nombre": "Cargador USB",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -170,11 +179,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 13,
-			"nombre": "televisor",
+			"id": "13",
+			"nombre": "Limpia Vidrios",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -184,11 +194,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 14,
-			"nombre": "televisor",
+			"id": "14",
+			"nombre": "Cuaderno Universitario",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -198,11 +209,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 15,
-			"nombre": "televisor",
+			"id": "15",
+			"nombre": "Libro Hábitos Atómicos por James Clear",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -212,11 +224,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 16,
-			"nombre": "televisor",
+			"id": "16",
+			"nombre": "Juego Fifa 23 PS5",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -226,11 +239,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": true
 		},
 		{
-			"id": 17,
-			"nombre": "televisor",
+			"id": "17",
+			"nombre": "Cámara Web",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -240,11 +254,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 18,
-			"nombre": "televisor",
+			"id": "18",
+			"nombre": "Limpia vidrios",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -254,11 +269,12 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 19,
-			"nombre": "televisor",
+			"id": "19",
+			"nombre": "Borrador Pizarra",
 			"precio_unitario": 500,
 			"unidad": {
 				"id_unidad": 1,
@@ -268,10 +284,11 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		},
 		{
-			"id": 20,
+			"id": "20",
 			"nombre": "Play Station 5",
 			"precio_unitario": 500,
 			"unidad": {
@@ -282,7 +299,8 @@
 				"id_categoria": 2,
 				"tipo_categoria": "electrodomestico"
 			},
-			"cantidad_unidades": 10
+			"cantidad_unidades": 10,
+			"esta_en_carrito": false
 		}
 	]
 }

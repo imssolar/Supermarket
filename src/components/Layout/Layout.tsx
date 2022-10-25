@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer, Navbar } from '../'
+import { Footer } from '../'
 
 interface Props {
 	children: React.ReactNode

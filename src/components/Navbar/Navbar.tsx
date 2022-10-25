@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from 'react'
+import React, { useState, MouseEvent } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -12,11 +12,13 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { Home } from '../../pages'
-import { CrearProductos } from '../../pages/Productos/CrearProductos'
+import { Productos } from '../../pages/Productos/Productos'
+import { Login } from '../../pages/Usuarios/IniciarSesion'
+import { Registro } from '../../pages/Usuarios/Registro'
 
-const pages = ['Products', 'Pricing', 'Blog']
+const pages = ['home', 'crear-producto']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 export const Navbar = () => {
@@ -48,7 +50,7 @@ export const Navbar = () => {
 							variant="h6"
 							noWrap
 							component="a"
-							href="/"
+							href="/home"
 							sx={{
 								mr: 2,
 								display: { xs: 'none', md: 'flex' },
@@ -92,9 +94,11 @@ export const Navbar = () => {
 								}}
 							>
 								{pages.map((page) => (
-									<MenuItem key={page} onClick={handleCloseNavMenu}>
-										<Typography textAlign="center">{page}</Typography>
-									</MenuItem>
+									// <MenuItem key={page} onClick={handleCloseNavMenu}>
+									<NavLink key={page} to={'home'}>
+										{page}
+									</NavLink>
+									// </MenuItem>
 								))}
 							</Menu>
 						</Box>
@@ -164,7 +168,10 @@ export const Navbar = () => {
 
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/crear-producto" element={<CrearProductos />} />
+				<Route path="/producto" element={<Productos />} />
+				<Route path="/producto/:id" element={<Productos />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/registro" element={<Registro />} />
 			</Routes>
 		</BrowserRouter>
 	)

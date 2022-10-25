@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { Producto } from '../../interfaces/listado'
+import { Producto, ProductoSimple } from '../../interfaces/listado'
 
 /**
  * agregarlo en la interface
@@ -7,10 +7,13 @@ import { Producto } from '../../interfaces/listado'
  */
 interface contextProps {
 	productos: Producto[]
+	producto: ProductoSimple | null
 	loading: boolean
 	carrito_compras: Producto[]
-	getProductos: () => void
-	agregarCarrito: (producto: Producto) => void
+	getProductos: () => Promise<void>
+	agregarProducto: (producto: Producto) => void
+	updateProducto: (producto: ProductoSimple | Producto, id: string) => void
+	getProductoByID: (id: string) => void
 }
 
 export const ProductosContext = createContext({} as contextProps)
