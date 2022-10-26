@@ -47,9 +47,6 @@ const resolver: Resolver<FormValues> = async (values) => {
 	}
 }
 
-/**REVISAR ERRRORES REACT HOOK FORM */
-/**CREAR DOS PANTALLAS: REGISTRAR USUARIO(email,nombre,apellido,contraseña y confirmar contraseña) Y LOGEAR(correo-contraseña) */
-
 export const CrearProducto = () => {
 	const {
 		register,

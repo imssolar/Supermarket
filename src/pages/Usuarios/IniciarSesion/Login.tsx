@@ -93,6 +93,7 @@ export const Login = () => {
 									// 		'Mínimo 5 caracteres, al menos una mayúscula y minúscula. Puede contener caracteres especiales',
 									// },
 								})}
+								/*Crear ojito para ver/ocultar contraseña */
 								type="password"
 								name="password"
 								margin="dense"

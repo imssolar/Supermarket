@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import { Producto, ProductoSimple } from '../../interfaces/listado'
 import { AuthContext } from './AuthContext'
 import { AuthReducer } from './AuthReducer'
@@ -26,6 +26,10 @@ const INITIAL_STATE: AuthState = {
 
 export const AuthState = ({ children }: stateProps) => {
 	const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE)
+
+	useEffect(() => {
+		getToken()
+	}, [])
 
 	const registrar = async (usuario: Usuario) => {
 		const { data } = await api.post('/users', usuario)
@@ -66,6 +70,27 @@ export const AuthState = ({ children }: stateProps) => {
 			type: 'LOGOUT',
 		})
 	}
+	const getToken = async () => {
+		/*
+		1.Almacenar  tenemos token en localStorage
+		2.Si no hay token, return dispatch no autenticoado = logout
+		3.En caso de que haya token, hacemos un get con el header x-token
+		4.Si no es ok, logout
+		5.Seteamos el token denuevo en el localStorage y ejecutamos el iniciarSesion
+		*/
+		const token = localStorage.getItem('token')
+		if (!token) return dispatch({ type: 'LOGOUT' })
+		const respuesta = await api.get('/auth', { headers: { 'x-token': token } })
+		if (respuesta.status !== 200) return dispatch({ type: 'LOGOUT' })
+		localStorage.setItem('token', token)
+		dispatch({
+			type: 'INICIAR_SESION',
+			payload: {
+				usuario: respuesta.data.user,
+				token: respuesta.data.token,
+			},
+		})
+	}
 
 	return (
 		<AuthContext.Provider
@@ -74,6 +99,7 @@ export const AuthState = ({ children }: stateProps) => {
 				registrar,
 				iniciarSesion,
 				cerrarSesion,
+				getToken,
 			}}
 		>
 			{children}

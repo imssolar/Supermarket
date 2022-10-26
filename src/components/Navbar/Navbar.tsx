@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, useContext } from 'react'
+import React, { useState, MouseEvent, useContext, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -12,12 +12,21 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import {
+	BrowserRouter,
+	Link,
+	NavLink,
+	Route,
+	Routes,
+	useNavigate,
+} from 'react-router-dom'
 import { Home } from '../../pages'
 import { Productos } from '../../pages/Productos/Productos'
 import { Login } from '../../pages/Usuarios/IniciarSesion'
 import { Registro } from '../../pages/Usuarios/Registro'
 import { AuthContext } from '../../context/Auth/AuthContext'
+import { rgbToHex } from '@mui/material'
+import { color } from '@mui/system'
 
 const pages = ['home', 'crear-producto']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
@@ -26,7 +35,7 @@ export const Navbar = () => {
 	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
 	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
 
-	const { cerrarSesion } = useContext(AuthContext)
+	const { cerrarSesion, usuario } = useContext(AuthContext)
 
 	const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget)
@@ -45,7 +54,22 @@ export const Navbar = () => {
 	/*navigate a login*/
 	const logout = () => {
 		cerrarSesion()
+		setAnchorElUser(null)
 	}
+
+	const avatarBGColor = () => {
+		const colorR = Math.floor(Math.random() * 256)
+		const colorG = Math.floor(Math.random() * 256)
+		const colorB = Math.floor(Math.random() * 256)
+		const hex = `#${colorR.toString(16)}${colorG.toString(16)}${colorB.toString(
+			16
+		)}`
+		return hex
+	}
+
+	useEffect(() => {
+		avatarBGColor()
+	}, [])
 
 	return (
 		<BrowserRouter>
@@ -139,13 +163,18 @@ export const Navbar = () => {
 								</Button>
 							))}
 						</Box>
-						{/* -Mostrar en el avatar primera letra del nombre y primera letra del apellido
-							-Aplicar un color random al background del avatar
-						*/}
+
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title="Open settings">
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-									<Avatar alt="Semy Sharp" src="/static/images/avatar/2.jpg" />
+									<Avatar
+										sx={{ bgcolor: avatarBGColor() }}
+										src="/static/images/avatar/2.jpg"
+									>
+										{`${usuario?.nombre.split('')[0]}${
+											usuario?.apellido.split('')[0]
+										}`}
+									</Avatar>
 								</IconButton>
 							</Tooltip>
 							<Menu
@@ -173,8 +202,10 @@ export const Navbar = () => {
 								<MenuItem onClick={handleCloseUserMenu}>
 									<Typography textAlign="center">{settings[2]}</Typography>
 								</MenuItem>
-								<MenuItem onClick={logout}>
-									<Typography textAlign="center">{settings[3]}</Typography>
+								<MenuItem>
+									<Link onClick={logout} to={'/login'}>
+										<Typography textAlign="center">{settings[3]}</Typography>
+									</Link>
 								</MenuItem>
 							</Menu>
 						</Box>

@@ -1,6 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Grid, Typography, Stack, Button, Paper } from '@mui/material'
-import { Input, Layout, ListadoProductos, MUIButton } from '../../components'
+import {
+	Input,
+	Layout,
+	ListadoProductos,
+	MUIButton,
+	Navbar,
+} from '../../components'
 import { AddCircleOutline as AddIcon } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
 import { ProductosContext } from '../../context/Productos/ProductosContext'
