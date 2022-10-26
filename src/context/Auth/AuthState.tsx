@@ -4,15 +4,12 @@ import { AuthContext } from './AuthContext'
 import { AuthReducer } from './AuthReducer'
 import data from '../../data/productos.json'
 import api from '../../api/api'
-import { Status, Usuario } from '../../interfaces/usuarios'
+import { Login, Status, Usuario } from '../../interfaces/usuarios'
 
 interface stateProps {
 	children: React.ReactNode
 }
-/**
- * agregar acá
- *
- */
+
 export interface AuthState {
 	token: string
 	usuario: Usuario | null
@@ -47,11 +44,36 @@ export const AuthState = ({ children }: stateProps) => {
 		}
 	}
 
+	const iniciarSesion = async (usuario: Login) => {
+		const { data } = await api.post('/auth/login', usuario)
+		try {
+			dispatch({
+				type: 'INICIAR_SESION',
+				payload: {
+					usuario: data.user,
+					token: data.token,
+				},
+			})
+			localStorage.setItem('token', data.token)
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
+	const cerrarSesion = () => {
+		localStorage.removeItem('token')
+		dispatch({
+			type: 'LOGOUT',
+		})
+	}
+
 	return (
 		<AuthContext.Provider
 			value={{
 				...state,
 				registrar,
+				iniciarSesion,
+				cerrarSesion,
 			}}
 		>
 			{children}

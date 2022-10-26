@@ -1,10 +1,13 @@
 import { Usuario } from '../../interfaces/usuarios'
 import { AuthState } from './AuthState'
 
-type AuthActionType = {
-	type: 'REGISTRAR'
-	payload: { usuario: Usuario, token: string,mensaje:string }
-}
+type AuthActionType =
+	| {
+			type: 'REGISTRAR'
+			payload: { usuario: Usuario; token: string; mensaje: string }
+	}
+	| { type: 'INICIAR_SESION'; payload: { usuario: Usuario; token: string } }
+	| { type: 'LOGOUT' }
 
 export const AuthReducer = (
 	state: AuthState,
@@ -16,7 +19,24 @@ export const AuthReducer = (
 			...state,
 			usuario: action.payload.usuario,
 			token: action.payload.token,
-			mensaje:action.payload.mensaje
+			mensaje: action.payload.mensaje,
+			status: 'AUTENTICADO',
+		}
+
+	case 'INICIAR_SESION':
+		return {
+			...state,
+			usuario: action.payload.usuario,
+			token: action.payload.token,
+			status: 'AUTENTICADO',
+		}
+
+	case 'LOGOUT':
+		return {
+			...state,
+			usuario: null,
+			token: '',
+			status: 'NO AUTENTICADO',
 		}
 
 	default:

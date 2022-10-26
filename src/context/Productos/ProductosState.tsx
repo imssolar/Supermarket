@@ -2,7 +2,6 @@ import React, { useReducer } from 'react'
 import { Producto, ProductoSimple } from '../../interfaces/listado'
 import { ProductosContext } from './ProductosContext'
 import { productosReducer } from './productosReducer'
-import data from '../../data/productos.json'
 import api from '../../api/api'
 
 interface stateProps {
@@ -38,6 +37,11 @@ export const ProductosState = ({ children }: stateProps) => {
 			})
 		} catch (error) {
 			console.log(error)
+		} finally {
+			dispatch({
+				type: 'HANDLE_LOADING',
+			})
+			console.log('terminó')
 		}
 	}
 

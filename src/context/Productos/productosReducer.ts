@@ -4,8 +4,9 @@ import { productosState } from './ProductosState'
 type ProductosActionType =
 	| { type: 'GET_PRODUCTOS'; payload: Producto[] }
 	| { type: 'ADD_PRODUCTO'; payload: Producto }
-	| { type: 'UPDATE_PRODUCTO'; payload: {producto: Producto,id:string} }
-	| { type: 'FIND_PRODUCTO'; payload: ProductoSimple  }
+	| { type: 'UPDATE_PRODUCTO'; payload: { producto: Producto; id: string } }
+	| { type: 'FIND_PRODUCTO'; payload: ProductoSimple }
+	| { type: 'HANDLE_LOADING' }
 
 export const productosReducer = (
 	state: productosState,
@@ -16,6 +17,7 @@ export const productosReducer = (
 		return {
 			...state,
 			productos: action.payload,
+			loading:true
 		}
 	case 'ADD_PRODUCTO':
 		return {
@@ -25,14 +27,20 @@ export const productosReducer = (
 	case 'UPDATE_PRODUCTO':
 		return {
 			...state,
-			productos: state.productos.map(p => p._id === action.payload.id ? action.payload.producto : p)
-				
+			productos: state.productos.map((p) =>
+				p._id === action.payload.id ? action.payload.producto : p
+			),
 		}
 
 	case 'FIND_PRODUCTO':
 		return {
 			...state,
-			producto: action.payload
+			producto: action.payload,
+		}
+	case 'HANDLE_LOADING':
+		return {
+			...state,
+			loading: !state.loading,
 		}
 
 	default:

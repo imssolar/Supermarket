@@ -1,19 +1,11 @@
-import React from 'react'
-import {
-	Button,
-	TextField,
-	Grid,
-	Box,
-	Typography,
-	Card,
-	CardContent,
-	CardActions,
-} from '@mui/material'
+import React, { useContext, useEffect } from 'react'
+import { Button, TextField, Grid, Box, Typography, Card } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../../context/Auth/AuthContext'
 
 type FormValues = {
-	correo: string
+	email: string
 	password: string
 }
 
@@ -25,10 +17,19 @@ export const Login = () => {
 		reset,
 	} = useForm<FormValues>()
 
+	const { iniciarSesion, token } = useContext(AuthContext)
+
 	const onSubmit = handleSubmit((data) => {
 		console.log(data)
+		iniciarSesion(data)
 		reset()
 	})
+
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		if (localStorage.getItem('token')) navigate('/')
+	}, [token])
 
 	return (
 		<Box>
@@ -55,7 +56,7 @@ export const Login = () => {
 					<form onSubmit={onSubmit}>
 						<Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
 							<TextField
-								{...register('correo', {
+								{...register('email', {
 									required: {
 										value: true,
 										message: 'Campo requerido',
@@ -66,15 +67,15 @@ export const Login = () => {
 									},
 								})}
 								type="email"
-								name="correo"
+								name="email"
 								margin="dense"
 								fullWidth
 								label="Correo"
 								sx={{ marginTop: '25px', width: '400px' }}
 							/>
-							{errors.correo && (
+							{errors.email && (
 								<Typography sx={{ color: 'error.main' }}>
-									{errors.correo.message}
+									{errors.email.message}
 								</Typography>
 							)}
 						</Grid>
@@ -85,12 +86,12 @@ export const Login = () => {
 										value: true,
 										message: 'Campo requerido',
 									},
-									pattern: {
-										value:
-											/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/gm,
-										message:
-											'Mínimo 6 caracteres, al menos una mayúscula y minúscula. Puede contener caracteres especiales',
-									},
+									// pattern: {
+									// 	value:
+									// 		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{5,}$/gm,
+									// 	message:
+									// 		'Mínimo 5 caracteres, al menos una mayúscula y minúscula. Puede contener caracteres especiales',
+									// },
 								})}
 								type="password"
 								name="password"

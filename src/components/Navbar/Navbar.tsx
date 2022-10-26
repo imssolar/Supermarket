@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react'
+import React, { useState, MouseEvent, useContext } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -17,6 +17,7 @@ import { Home } from '../../pages'
 import { Productos } from '../../pages/Productos/Productos'
 import { Login } from '../../pages/Usuarios/IniciarSesion'
 import { Registro } from '../../pages/Usuarios/Registro'
+import { AuthContext } from '../../context/Auth/AuthContext'
 
 const pages = ['home', 'crear-producto']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
@@ -24,6 +25,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 export const Navbar = () => {
 	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
 	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
+
+	const { cerrarSesion } = useContext(AuthContext)
 
 	const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget)
@@ -38,6 +41,10 @@ export const Navbar = () => {
 
 	const handleCloseUserMenu = () => {
 		setAnchorElUser(null)
+	}
+	/*navigate a login*/
+	const logout = () => {
+		cerrarSesion()
 	}
 
 	return (
@@ -132,11 +139,13 @@ export const Navbar = () => {
 								</Button>
 							))}
 						</Box>
-
+						{/* -Mostrar en el avatar primera letra del nombre y primera letra del apellido
+							-Aplicar un color random al background del avatar
+						*/}
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title="Open settings">
 								<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-									<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+									<Avatar alt="Semy Sharp" src="/static/images/avatar/2.jpg" />
 								</IconButton>
 							</Tooltip>
 							<Menu
@@ -155,11 +164,18 @@ export const Navbar = () => {
 								open={Boolean(anchorElUser)}
 								onClose={handleCloseUserMenu}
 							>
-								{settings.map((setting) => (
-									<MenuItem key={setting} onClick={handleCloseUserMenu}>
-										<Typography textAlign="center">{setting}</Typography>
-									</MenuItem>
-								))}
+								<MenuItem onClick={handleCloseUserMenu}>
+									<Typography textAlign="center">{settings[0]}</Typography>
+								</MenuItem>
+								<MenuItem onClick={handleCloseUserMenu}>
+									<Typography textAlign="center">{settings[1]}</Typography>
+								</MenuItem>
+								<MenuItem onClick={handleCloseUserMenu}>
+									<Typography textAlign="center">{settings[2]}</Typography>
+								</MenuItem>
+								<MenuItem onClick={logout}>
+									<Typography textAlign="center">{settings[3]}</Typography>
+								</MenuItem>
 							</Menu>
 						</Box>
 					</Toolbar>
